@@ -1,20 +1,31 @@
-import { Box, CssBaseline } from "@mui/material";
+import { Box, CssBaseline, Grid } from "@mui/material";
 
 import NameGenerator from "../components/Generator/NameGenerator";
+import CityNameGenerator from "../components/Generator/CityNameGenerator";
 
 export default function Generator() {
   return (
     <Box
       sx={{
-        height: "100vh", // Full viewport height
+        backgroundColor: "#444444",
+        height: "100vh",
         display: "flex",
-        flexDirection: "column", // Ensuring flex items are stacked vertically
-        alignItems: "center", // Horizontal centering
-        justifyContent: "center", // Vertical centering
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <CssBaseline />
-      <NameGenerator />
+
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12} md={4}>
+          <CityNameGenerator />
+        </Grid>
+
+        <Grid item xs={12} md={4}>
+          <NameGenerator />
+        </Grid>
+      </Grid>
     </Box>
   );
 }

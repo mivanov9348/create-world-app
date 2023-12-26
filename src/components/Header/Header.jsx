@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 const StyledButton = styled(Button)({
@@ -7,7 +7,7 @@ const StyledButton = styled(Button)({
   "&:hover": {
     color: "black",
     fontWeight: "400",
-    backgroundColor: "grey",
+    backgroundColor: "#b4b4b4",
     borderRadius: "10px",
   },
 });
@@ -15,13 +15,23 @@ const StyledButton = styled(Button)({
 export default function Header() {
   return (
     <AppBar
-      sx={{ backgroundColor: "#5a5a5a", borderBottom: "3px solid black" }}
+      sx={{ backgroundColor: "#161c38", borderBottom: "3px solid black" }}
     >
       <Toolbar>
         <Box sx={{ flexGrow: 1 }}>
-          <StyledButton color="inherit" component={NavLink} to="/">
-            Home
-          </StyledButton>
+          <IconButton
+            component={NavLink}
+            to="/"
+            edge="start"
+            color="inherit"
+            aria-label="home"
+          >
+            <img
+              src="../public/images/logo.png"
+              alt="World Builder Logo"
+              style={{ height: "50px" }}
+            />
+          </IconButton>
           <StyledButton color="inherit" component={NavLink} to="/build">
             Build
           </StyledButton>
