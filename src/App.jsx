@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import AuthLayout from "./Layouts/AuthLayout";
 import Layout from "./Layouts/Layout";
+import Story from "./pages/Story";
 
 const theme = createTheme({
   palette: {
@@ -19,11 +20,14 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter sx={{ backgroundColor: "green" }}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="build" element={<Build />} />
+            <Route path="build" element={<Build />}>
+              <Route path="" />
+            </Route>
+            <Route path="story" element={<Story />} />
             <Route path="generator" element={<Generator />} />
 
             <Route path="/" element={<AuthLayout />}>

@@ -34,6 +34,9 @@ export default function Header() {
           </IconButton>
           <StyledButton color="inherit" component={NavLink} to="/build">
             Build
+          </StyledButton>{" "}
+          <StyledButton color="inherit" component={NavLink} to="/story">
+            Story
           </StyledButton>
           <StyledButton color="inherit" component={NavLink} to="/generator">
             Generator
